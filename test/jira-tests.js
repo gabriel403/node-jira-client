@@ -30,11 +30,7 @@ describe('Jira API Tests', () => {
     });
 
     it('Constructor with no auth credentials', () => {
-      const {
-        username,
-        password,
-        ...options
-      } = getOptions();
+      const { username, password, ...options } = getOptions(); // eslint-disable-line no-use-before-define, max-len
 
       const jira = new JiraApi(options);
 
@@ -137,10 +133,7 @@ describe('Jira API Tests', () => {
     });
 
     it('makeUri functions properly no port http', () => {
-      const {
-        port,
-        ...options
-        } = getOptions();
+      const { port, ...options } = getOptions(); // eslint-disable-line no-use-before-define
       const jira = new JiraApi(options);
 
       expect(jira.makeUri({
@@ -150,10 +143,7 @@ describe('Jira API Tests', () => {
     });
 
     it('makeUri functions properly no port https', () => {
-      const {
-        port,
-        ...options
-        } = getOptions({ protocol: 'https' });
+      const { port, ...options } = getOptions({ protocol: 'https' }); // eslint-disable-line no-use-before-define, max-len
       const jira = new JiraApi(options);
 
       expect(jira.makeUri({
